@@ -58,7 +58,8 @@ function createModel() {
   
   // Add a single hidden layer
   model.add(tf.layers.dense({inputShape: [1], units: 1, useBias: true}));
-  
+	
+	
   // Add an output layer
   model.add(tf.layers.dense({units: 1, useBias: true}));
 
@@ -115,7 +116,7 @@ async function trainModel(model, inputs, labels) {
   });
   
   const batchSize = 32;
-  const epochs = 50;
+  const epochs = 100;
   
   return await model.fit(inputs, labels, {
     batchSize,
